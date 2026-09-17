@@ -2,37 +2,66 @@
 <html>
 
 <head>
-<title>TM Dashboard</title>
-<link rel="stylesheet" href="styles.css">
+    <title>TM Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+
+    https://cdn.jsdelivr.net/npm/chart.jsscript>
 </head>
 
 <body>
 
-<h1>TM Level 3 Investigation Dashboard</h1>
+    <h1>TM Level 3 Investigation Dashboard</h1>
 
-<div class="cards">
+    <div class="cards">
 
-    <div class="card">
-        <h3>Total Alerts</h3>
-        <div class="number">500</div>
+        <div class="card">
+            <h3>Total Alerts</h3>
+            <div class="number">500</div>
+        </div>
+
+        <div class="card">
+            <h3>Open Cases</h3>
+            <div class="number">120</div>
+        </div>
+
+        <div class="card">
+            <h3>Closed Cases</h3>
+            <div class="number">350</div>
+        </div>
+
+        <div class="card">
+            <h3>Escalated Cases</h3>
+            <div class="number">30</div>
+        </div>
+
     </div>
 
-    <div class="card">
-        <h3>Open Cases</h3>
-        <div class="number">120</div>
-    </div>
+    <h2>Monthly Alert Trend</h2>
 
-    <div class="card">
-        <h3>Closed Cases</h3>
-        <div class="number">350</div>
-    </div>
+    <canvas id="alertChart"></canvas>
 
-    <div class="card">
-        <h3>Escalated Cases</h3>
-        <div class="number">30</div>
-    </div>
+    <script>
+        const ctx = document.getElementById('alertChart');
 
-</div>
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+                datasets: [{
+                    label: 'Alerts',
+                    data: [120, 145, 132, 158, 170],
+                    borderColor: '#0056b3',
+                    backgroundColor: 'rgba(0,86,179,0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
 
 </body>
+
 </html>
