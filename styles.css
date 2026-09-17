@@ -1,59 +1,134 @@
+/* General Layout */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f9;
     margin: 20px;
+    color: #333;
 }
 
+/* Dashboard Title */
 h1 {
     color: #1f4e79;
     margin-bottom: 25px;
+    font-size: 48px;
 }
 
 h2 {
     color: #1f4e79;
     margin-top: 40px;
+    margin-bottom: 20px;
 }
 
+/* KPI Section */
 .cards {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .card {
-    width: 220px;
     background: white;
-    padding: 20px;
+    width: 240px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
 }
 
 .card h3 {
     color: #666;
     margin: 0;
+    font-size: 16px;
 }
 
 .number {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: bold;
     color: #0056b3;
     margin-top: 10px;
 }
 
-canvas {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    max-width: 1200px;
-}
-
+/* Chart Container */
 .chart-container {
     background: white;
+    width: 100%;
+    max-width: 1400px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    margin-bottom: 40px;
+}
+
+/* Canvas */
+canvas {
+    width: 100% !important;
+    height: 500px !important;
+}
+
+/* Table Section */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+table th {
+    background: #1f4e79;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* AI Benefits Cards */
+.ai-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ai-card {
+    background: white;
+    width: 240px;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    width: 100%;
-    max-width: 1200px;
-    height: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.ai-card h3 {
+    color: #666;
+    margin: 0;
+}
+
+.ai-card .number {
+    color: #28a745;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .card,
+    .ai-card {
+        width: 100%;
+    }
+
+    canvas {
+        height: 300px !important;
+    }
 }
