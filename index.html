@@ -42,6 +42,7 @@
         </div>
     
     <script>
+        
         const ctx = document.getElementById('alertChart');
 
         new Chart(ctx, {
@@ -62,7 +63,89 @@
             }
         });
     </script>
+    
+    <h2>Alert Status Breakdown</h2>
 
+<div class="chart-container">
+    <canvas id="statusChart"></canvas>
+</div>
+
+<script>
+const statusCtx = document.getElementById('statusChart');
+
+new Chart(statusCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Open', 'Closed', 'Escalated'],
+        datasets: [{
+            data: [120, 350, 30],
+            backgroundColor: [
+                '#ffc107',
+                '#28a745',
+                '#dc3545'
+            ]
+        }]
+    }
+});
+</script>
+
+    <h2>Investigator Productivity</h2>
+
+<table>
+    <tr>
+        <th>Investigator</th>
+        <th>Assigned</th>
+        <th>Closed</th>
+        <th>Pending</th>
+    </tr>
+
+    <tr>
+        <td>Afizie</td>
+        <td>50</td>
+        <td>45</td>
+        <td>5</td>
+    </tr>
+
+    <tr>
+        <td>Staff A</td>
+        <td>42</td>
+        <td>38</td>
+        <td>4</td>
+    </tr>
+
+    <tr>
+        <td>Staff B</td>
+        <td>55</td>
+        <td>50</td>
+        <td>5</td>
+    </tr>
+</table>
+
+    <h2>AI Automation Benefits</h2>
+
+<div class="ai-section">
+
+    <div class="ai-card">
+        <h3>Cases Processed by AI</h3>
+        <div class="number">150</div>
+    </div>
+
+    <div class="ai-card">
+        <h3>Narratives Generated</h3>
+        <div class="number">145</div>
+    </div>
+
+    <div class="ai-card">
+        <h3>Hours Saved</h3>
+        <div class="number">75</div>
+    </div>
+
+    <div class="ai-card">
+        <h3>Productivity Gain</h3>
+        <div class="number">35%+</div>
+    </div>
+
+</div>
 </body>
 
 </html>
