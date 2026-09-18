@@ -1,141 +1,351 @@
-/* General Layout */
+/* =========================
+   GENERAL
+========================= */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    margin: 20px;
-    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #edf2f7;
+    margin: 0;
+    padding: 0;
+    color: #334155;
 }
 
-/* Dashboard Title */
-h1 {
-    color: #1f4e79;
-    margin-bottom: 25px;
-    font-size: 48px;
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: linear-gradient(90deg,#0f274c,#13396e);
+    color: white;
+    padding: 16px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 42px;
+    color: white;
+}
+
+.header-left p {
+    margin: 5px 0 0;
+    opacity: 0.8;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #2563eb
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.header-right {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+
+    padding: 10px 18px;
+    border-radius: 30px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.green {
+    background: #10b981;
+}
+
+.blue {
+    background: #2563eb;
+}
+
+.orange {
+    background: #f59e0b;
+}
+
+.purple {
+    background: #7c3aed;
+}
+
+/* =========================
+   STATUS BAR
+========================= */
+
+.status-bar {
+    background: #065f46;
+    color: white;
+
+    padding: 14px 28px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
 
 h2 {
-    color: #1f4e79;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    color: #334155;
+    margin: 35px 20px 15px;
 }
 
-/* KPI Section */
+.content {
+    padding: 20px;
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+
 .cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
+
+    margin: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap: 18px;
 }
 
 .card {
+
     background: white;
-    width: 240px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-    transition: transform 0.2s;
+    padding: 24px;
+
+    border-radius: 16px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,0.08);
+
+    transition: 0.2s;
 }
 
 .card:hover {
+
     transform: translateY(-3px);
 }
 
 .card h3 {
-    color: #666;
+
     margin: 0;
-    font-size: 16px;
+    color: #64748b;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.number {
-    font-size: 48px;
+.card .number {
+
+    margin-top: 12px;
+
+    font-size: 52px;
     font-weight: bold;
-    color: #0056b3;
+}
+
+.card small {
+
+    display: block;
     margin-top: 10px;
+    color: #64748b;
 }
 
-/* Chart Container */
+.blue-card {
+    border-left: 6px solid #2563eb;
+}
+
+.green-card {
+    border-left: 6px solid #10b981;
+}
+
+.orange-card {
+    border-left: 6px solid #f59e0b;
+}
+
+.purple-card {
+    border-left: 6px solid #7c3aed;
+}
+
+.red-card {
+    border-left: 6px solid #ef4444;
+}
+
+/* =========================
+   CHART
+========================= */
+
 .chart-container {
+
     background: white;
-    width: 100%;
-    max-width: 1400px;
+
+    margin: 20px;
+
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-    margin-bottom: 40px;
-    text-align: center;
-    
+
+    border-radius: 18px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,0.08);
 }
 
-/* Canvas */
+#statusChart {
+    max-width: 550px;
+    margin: auto;
+}
+
 canvas {
     width: 100% !important;
-    height: 500px !important;
 }
 
-/* Table Section */
+/* =========================
+   RISK STATS
+========================= */
+
+.risk-stats {
+
+    margin-top: 15px;
+    line-height: 28px;
+    color: #475569;
+}
+
+/* =========================
+   TABLE
+========================= */
+
 table {
-    width: 100%;
+
+    width: calc(100% - 40px);
+
+    margin: 20px;
+
     border-collapse: collapse;
+
     background: white;
-    border-radius: 12px;
+
+    border-radius: 16px;
+
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,0.08);
 }
 
 table th {
-    background: #1f4e79;
+
+    background: #0f274c;
+
     color: white;
-    padding: 12px;
+
     text-align: left;
+
+    padding: 16px;
 }
 
 table td {
-    padding: 12px;
-    border-bottom: 1px solid #eaeaea;
+
+    padding: 14px 16px;
+
+    border-bottom:
+    1px solid #e5e7eb;
 }
 
-/* AI Benefits Cards */
+/* =========================
+   AI BENEFITS
+========================= */
+
 .ai-section {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+
+    margin: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 18px;
 }
 
 .ai-card {
+
     background: white;
-    width: 240px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,0.08);
+
+    border-left:
+    6px solid #10b981;
 }
 
 .ai-card h3 {
-    color: #666;
+
     margin: 0;
+    color: #64748b;
 }
 
 .ai-card .number {
-    color: #28a745;
+
+    margin-top: 12px;
+
+    color: #10b981;
+
+    font-size: 48px;
+    font-weight: bold;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* =========================
+   MOBILE
+========================= */
 
-    h1 {
-        font-size: 32px;
+@media (max-width:768px) {
+
+    .header {
+
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .card,
-    .ai-card {
-        width: 100%;
+    .header-right {
+
+        justify-content: center;
     }
 
-    canvas {
-        height: 300px !important;
-    }    
-}
-#statusChart {
-    width: 450px !important;
-    height: 250px !important;
-    margin: auto;
+    .header-left h1 {
+        font-size: 28px;
+    }
 }
