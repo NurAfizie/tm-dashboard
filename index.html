@@ -1,132 +1,208 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>TM Dashboard</title>
+    <title>TM Alert Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 
 <body>
 
-    <h1>TM Level 3 Investigation Dashboard</h1>
+<!-- HEADER -->
+<div class="header">
 
-    <div class="cards">
+    <div class="header-left">
 
-        <div class="card">
-            <h3>Total Alerts</h3>
-            <div class="number">500</div>
+        <div class="logo">
+            AML
         </div>
 
-        <div class="card">
-            <h3>Open Cases</h3>
-            <div class="number">120</div>
-        </div>
+        <div>
+            <h1>TM Alert Overview (Investment Bank)</h1>
 
-        <div class="card">
-            <h3>Closed Cases</h3>
-            <div class="number">350</div>
-        </div>
-
-        <div class="card">
-            <h3>Escalated Cases</h3>
-            <div class="number">30</div>
+            <p>
+                Compliance Operations · Alert Lifecycle · Risk Management · TM Investigation
+            </p>
         </div>
 
     </div>
 
-    <h2>Monthly Alert Trend</h2>
-        <div class="chart-container">
-        <canvas id="alertChart"></canvas>
-        </div>
-    
-    <script>
-        
-        const ctx = document.getElementById('alertChart');
+    <div class="header-right">
 
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
-                datasets: [{
-                    label: 'Alerts',
-                    data: [120, 145, 132, 158, 170],
-                    borderColor: '#0056b3',
-                    backgroundColor: 'rgba(0,86,179,0.2)',
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true
-            }
-        });
-    </script>
-    
-    <h2>Alert Status Breakdown</h2>
+        <span class="badge green">✓ Data Loaded</span>
+        <span class="badge blue">📊 500 Alerts</span>
+        <span class="badge purple">📅 Sep 2026</span>
+        <span class="badge orange">🔒 Confidential</span>
+
+    </div>
+
+</div>
+
+<!-- NOTIFICATION BAR -->
+<div class="status-bar">
+    ✅ 500 Records Loaded Successfully
+</div>
+
+<!-- KPI SECTION -->
+<h2>Executive Summary</h2>
+
+<div class="cards">
+
+    <div class="card blue-card">
+        <h3>Total Alerts</h3>
+        <div class="number">500</div>
+        <small>Records Reviewed</small>
+    </div>
+
+    <div class="card green-card">
+        <h3>Closed Cases</h3>
+        <div class="number">350</div>
+        <small>70% Closure Rate</small>
+    </div>
+
+    <div class="card orange-card">
+        <h3>Open Backlog</h3>
+        <div class="number">120</div>
+        <small>Pending Investigation</small>
+    </div>
+
+    <div class="card purple-card">
+        <h3>Escalated Cases</h3>
+        <div class="number">30</div>
+        <small>Level 4 Review</small>
+    </div>
+
+</div>
+
+<!-- TREND CHART -->
+<h2>Alert Volume Trend</h2>
+
+<div class="chart-container">
+    <canvas id="alertChart"></canvas>
+</div>
+
+<!-- STATUS CHART -->
+<h2>Case Status Distribution</h2>
 
 <div class="chart-container">
     <canvas id="statusChart"></canvas>
 </div>
 
-<script>
-const statusCtx = document.getElementById('statusChart');
+<!-- RISK OVERVIEW -->
+<h2>Risk Category Overview</h2>
 
-new Chart(statusCtx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Open', 'Closed', 'Escalated'],
-        datasets: [{
-            data: [120, 350, 30],
-            backgroundColor: [
-                '#ffc107',
-                '#28a745',
-                '#dc3545'
-            ]
-        }]
-    }
-});
-</script>
+<div class="cards">
 
-    <h2>Investigator Productivity</h2>
+    <div class="card red-card">
+        <h3>High Risk Alerts</h3>
+        <div class="number">120</div>
+
+        <div class="risk-stats">
+            🟢 90 Closed<br>
+            🟡 20 Review<br>
+            🔴 10 Escalated
+        </div>
+    </div>
+
+    <div class="card orange-card">
+        <h3>Medium Risk Alerts</h3>
+        <div class="number">250</div>
+
+        <div class="risk-stats">
+            🟢 200 Closed<br>
+            🟡 35 Review<br>
+            🔴 15 Escalated
+        </div>
+    </div>
+
+    <div class="card blue-card">
+        <h3>Low Risk Alerts</h3>
+        <div class="number">130</div>
+
+        <div class="risk-stats">
+            🟢 120 Closed<br>
+            🟡 8 Review<br>
+            🔴 2 Escalated
+        </div>
+    </div>
+
+</div>
+
+<!-- AGING -->
+<h2>Investigation Aging</h2>
+
+<table>
+    <tr>
+        <th>Aging Bucket</th>
+        <th>Cases</th>
+    </tr>
+
+    <tr>
+        <td>0 - 7 Days</td>
+        <td>70</td>
+    </tr>
+
+    <tr>
+        <td>8 - 14 Days</td>
+        <td>25</td>
+    </tr>
+
+    <tr>
+        <td>15 - 30 Days</td>
+        <td>15</td>
+    </tr>
+
+    <tr>
+        <td>> 30 Days</td>
+        <td>10</td>
+    </tr>
+</table>
+
+<!-- INVESTIGATOR -->
+<h2>Investigator Productivity</h2>
 
 <table>
     <tr>
         <th>Investigator</th>
         <th>Assigned</th>
         <th>Closed</th>
-        <th>Pending</th>
+        <th>Open</th>
+        <th>Escalated</th>
     </tr>
 
     <tr>
         <td>Afizie</td>
         <td>50</td>
         <td>45</td>
-        <td>5</td>
+        <td>3</td>
+        <td>2</td>
     </tr>
 
     <tr>
         <td>Staff A</td>
         <td>42</td>
         <td>38</td>
-        <td>4</td>
+        <td>2</td>
+        <td>2</td>
     </tr>
 
     <tr>
         <td>Staff B</td>
         <td>55</td>
         <td>50</td>
-        <td>5</td>
+        <td>3</td>
+        <td>2</td>
     </tr>
+
 </table>
 
-    <h2>AI Automation Benefits</h2>
+<!-- AI BENEFITS -->
+<h2>AI Automation Benefits</h2>
 
 <div class="ai-section">
 
     <div class="ai-card">
-        <h3>Cases Processed by AI</h3>
+        <h3>Cases Processed</h3>
         <div class="number">150</div>
     </div>
 
@@ -146,6 +222,42 @@ new Chart(statusCtx, {
     </div>
 
 </div>
-</body>
 
+<script>
+
+/* TREND CHART */
+new Chart(document.getElementById('alertChart'), {
+    type: 'line',
+    data: {
+        labels: ['May','Jun','Jul','Aug','Sep'],
+        datasets: [{
+            label: 'Alerts',
+            data: [120,145,132,158,170],
+            borderColor: '#2563eb',
+            backgroundColor: 'rgba(37,99,235,0.15)',
+            fill: true,
+            tension: 0.4
+        }]
+    }
+});
+
+/* DONUT */
+new Chart(document.getElementById('statusChart'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Open','Closed','Escalated'],
+        datasets: [{
+            data: [120,350,30],
+            backgroundColor: [
+                '#f59e0b',
+                '#10b981',
+                '#ef4444'
+            ]
+        }]
+    }
+});
+
+</script>
+
+</body>
 </html>
